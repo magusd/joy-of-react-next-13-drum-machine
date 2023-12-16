@@ -18,4 +18,14 @@ function SoundProvider({ children }) {
     );
 }
 
+export function useSoundEnabled() {
+    const data = React.useContext(SoundContext);
+    if (!data) {
+        throw new Error(
+            'useSoundEnabled must be used within a SoundProvider'
+        );
+    }
+    return data;
+}
+
 export default SoundProvider;
